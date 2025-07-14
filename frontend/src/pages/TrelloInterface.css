@@ -1,0 +1,778 @@
+﻿/* TrelloInterface.css */
+
+.trello-container {
+  min-height: 100vh;
+  background-color: white;
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+}
+
+/* Header Styles */
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  background-color: #dc2626;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settings-icon {
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background-color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  height: calc(100vh - 48px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 256px;
+  background-color: #374151;
+  padding: 16px;
+  position: relative;
+}
+
+.sidebar-section {
+  margin-bottom: 24px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.section-header h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #d1d5db;
+  margin: 0;
+}
+
+.more-icon {
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+}
+
+.board-item {
+  background-color: rgba(147, 51, 234, 0.2);
+  border: 1px solid #8b5cf6;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.board-actions {
+  margin-left: auto;
+}
+
+.add-card-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: rgba(59, 130, 246, 0.3);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+
+.add-card-button:hover {
+  background-color: #3b82f6;
+  transform: scale(1.1);
+}
+
+.board-color {
+  width: 16px;
+  height: 16px;
+  background-color: #8b5cf6;
+  border-radius: 2px;
+}
+
+.board-item span {
+  font-size: 14px;
+}
+
+.users-icon {
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+}
+
+.members-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.member-avatar {
+  width: 24px;
+  height: 24px;
+  background-color: #dc2626;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.member-item span {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.sidebar-bottom {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+}
+
+.close-warning {
+  background-color: #4b5563;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.close-warning p {
+  font-size: 14px;
+  color: #d1d5db;
+  margin: 0 0 8px 0;
+}
+
+.close-button {
+  width: 100%;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Board Content */
+.board-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.board-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.board-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.invite-button {
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.invite-button:hover {
+  background-color: #7c3aed;
+}
+
+.invite-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Board Lists */
+.board-lists {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.board-list {
+  background-color: #374151;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 288px;
+  max-width: 288px;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.list-header h3 {
+  font-weight: 500;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.card {
+  flex: 0 0 280px;
+  box-sizing: border-box;
+  background-color: #000000;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Allow height to be determined by content */
+}
+
+/* Empty cards with no tasks are shorter */
+.card-empty {
+  min-height: 80px;
+}
+
+.card:hover {
+  background-color: #1a1a1a;
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+/* Card content styling */
+.card-content {
+  margin-bottom: 4px; /* Reduced from 12px to 4px to remove awkward space */
+}
+
+/* Ensure the card footer is always at the bottom */
+.card-footer {
+  margin-top: 4px; /* Reduced from 12px to 4px to remove awkward space */
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-textarea {
+  width: 100%;
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  resize: none;
+  font-family: inherit;
+}
+
+.card-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.add-card-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-card-btn:hover {
+  background-color: #2563eb;
+}
+
+.cancel-btn {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  padding: 4px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.cancel-btn:hover {
+  color: white;
+}
+
+.cancel-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.add-card-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+
+.add-card-trigger:hover {
+  color: white;
+  background-color: #4b5563;
+}
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.add-list-container {
+  min-width: 288px;
+}
+
+.add-list-card {
+  flex: 0 0 280px;
+  box-sizing: border-box;
+  background-color: rgb(113, 9, 136); /* Increased opacity from 0.1 to 0.25 */
+  border-radius: 4px;
+  padding: 12px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80px;
+}
+
+.add-list-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.2s;
+}
+
+.add-list-button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.add-list-button .plus-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  background-color: #374151;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 448px;
+  width: 100%;
+  margin: 16px;
+}
+
+.modal h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+}
+
+.modal p {
+  color: #d1d5db;
+  margin: 0 0 24px 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.cancel-modal-btn {
+  flex: 1;
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-modal-btn:hover {
+  background-color: #6b7280;
+}
+
+.confirm-modal-btn {
+  flex: 1;
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.confirm-modal-btn:hover {
+  background-color: #b91c1c;
+}
+
+.modal-content {
+  margin-bottom: 24px;
+}
+
+.board-name-input,
+.board-description-textarea {
+  width: 100%;
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.board-name-input:focus,
+.board-description-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.board-description-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.color-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.color-option {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.selected {
+  box-shadow: 0 0 0 3px white;
+}
+
+.confirm-modal-btn.create-btn {
+  background-color: #3b82f6;
+}
+
+.confirm-modal-btn.create-btn:hover {
+  background-color: #2563eb;
+}
+
+.confirm-modal-btn.create-btn:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+.card-name-input,
+.card-description-textarea {
+  width: 100%;
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.card-name-input:focus,
+.card-description-textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3b82f6;
+}
+
+.card-description-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.card-name-input::placeholder,
+.card-description-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+/* Placeholder Styles */
+.board-name-input::placeholder,
+.board-description-textarea::placeholder,
+.card-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Card content styling */
+.card-content {
+  margin-bottom: 4px; /* Reduced from 12px to 4px to remove awkward space */
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: #e5e7eb;
+}
+
+.card-description {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Task Styles */
+.card-tasks-container {
+  margin-top: 16px;
+  padding-top: 8px;
+  /* Removed the border-top that was creating a horizontal line */
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.task-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.task-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.task-title {
+  word-break: break-word;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.loading-tasks, .no-tasks {
+  font-size: 12px;
+  color: #9ca3af;
+  font-style: italic;
+  margin: 4px 0;
+}
+
+/* Card footer with Add button and image icon */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  position: relative;
+}
+
+/* Add a card link at bottom of card */
+.add-card-link {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  padding: 8px 0;
+  margin-left: 0; /* Reset the auto margin */
+  margin-right: auto; /* Allow space on the right */
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.add-card-link:hover {
+  color: white;
+}
+
+.add-icon {
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.image-icon {
+  font-size: 16px;
+  color: white; /* Make the icon white */
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.9; /* Slightly transparent when not hovered */
+}
+
+.image-icon:hover {
+  opacity: 1; /* Fully opaque on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .board-content {
+    padding: 16px;
+  }
+
+  .board-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .board-lists {
+    flex-direction: column;
+  }
+
+  .board-list {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}

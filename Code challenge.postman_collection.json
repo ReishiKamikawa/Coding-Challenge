@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "2f743668-fba8-4bfa-a03d-198aca4dd4cd",
+		"name": "Code challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40651560"
+	},
+	"item": [
+		{
+			"name": "Auth - Signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newuser\",\n  \"password\": \"newpass\",\n  \"email\": \"thinghecho@gmail.com\",\n  \"verificationCode\": \"810550\"\n}"
+				},
+				"url": "http://localhost:3000/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Signin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"newuser\",\n  \"password\": \"newpass\",\n  \"email\": \"thinghecho@gmail.com\"\n}"
+				},
+				"url": "http://localhost:3000/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Send Verification Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"thinghecho@gmail.com\"\n}"
+				},
+				"url": "http://localhost:3000/auth/send-code"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Verify Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"thinghecho@gmail.com\",\n  \"code\": \"123456\"\n}"
+				},
+				"url": "http://localhost:3000/auth/verify-code"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth - Login With Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"thinghecho@gmail.com\",\n  \"code\": \"123456\"\n}"
+				},
+				"url": "http://localhost:3000/auth/login-with-code"
+			},
+			"response": []
+		},
+		{
+			"name": "Board - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test Board\",\n  \"description\": \"This is a test board\"\n}"
+				},
+				"url": "http://localhost:3000/boards"
+			},
+			"response": []
+		},
+		{
+			"name": "Board - Get All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards"
+			},
+			"response": []
+		},
+		{
+			"name": "Board - Get By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Board - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Updated Board\",\n  \"description\": \"This is a test board\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Board - Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Get All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test Board\",\n  \"description\": \"This is a test board\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Get By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Get By User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/user/{{userId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Test Board\",\n  \"description\": \"This is a test board1\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Invite Member",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"invite_id\": \"string\",         // Unique ID for the invitation\n  \"board_owner_id\": \"string\",    // User ID of the board owner\n  \"member_id\": \"string\",         // User ID of the member being invited\n  \"email_member\": \"string\",      // Email address of the member being invited\n  \"status\": \"string\"             // Status of the invitation (e.g., \"pending\")\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/invite"
+			},
+			"response": []
+		},
+		{
+			"name": "Card - Accept Invite",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"invite_id\": \"abc123\",\r\n  \"card_id\": \"cardId123\",\r\n  \"member_id\": \"inviteeUserId\",\r\n  \"status\": \"accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/invite/accept"
+			},
+			"response": []
+		},
+		{
+			"name": "Repository - Get Github Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": "http://localhost:3000/repositories/{{repositoryId}}/github-info"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Get All Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken1}}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"Task Description\",\n  \"status\": \"Task Status\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Get Task Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"task_id\",\n  \"card_owner_id\": \"card_owner_id\",\n  \"card_id\": \"current_card_id\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Delete Task",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Assign Member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"memberId\": \"member_id\"\n}"
+				},
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}/assign"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Get Assigned Members",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}/assign"
+			},
+			"response": []
+		},
+		{
+			"name": "Task - Remove Member Assignment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken1}}"
+					}
+				],
+				"url": "http://localhost:3000/boards/{{boardId}}/cards/{{cardId}}/tasks/{{taskId}}/assign/{{memberId}}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken1",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "boardId",
+			"value": "6i7xY6ratnAakUAwpfK4",
+			"type": "default"
+		},
+		{
+			"key": "cardId",
+			"value": "PhH9UTEnfeaq3VvQz5eO\t",
+			"type": "default"
+		},
+		{
+			"key": "taskId",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "memberId",
+			"value": "",
+			"type": "default"
+		}
+	]
+}

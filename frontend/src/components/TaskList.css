@@ -1,0 +1,89 @@
+﻿.task-lists-container {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    overflow-x: auto;
+    min-height: 400px;
+}
+
+.task-list-container {
+    background: #28303a;
+    border-radius: 8px;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 12px;
+}
+
+.task-list-title {
+    color: #abb1ba;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.task-list {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-item {
+    background: #232A32;
+    border: 1px solid #31373f;
+    border-radius: 6px;
+    padding: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.task-item:hover {
+    background: #2b3440;
+}
+
+.task-item.dragging {
+    background: #2b3440;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.24);
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-title {
+    color: #e0e3ea;
+    font-size: 14px;
+}
+
+.task-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.task-status {
+    font-size: 12px;
+    color: #abb1ba;
+    padding: 2px 8px;
+    background: #31373f;
+    border-radius: 4px;
+}
+
+.add-task-button {
+    width: 100%;
+    padding: 8px;
+    background: none;
+    border: 1px solid #586275;
+    color: #abb1ba;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.add-task-button:hover {
+    background: #2b3440;
+}

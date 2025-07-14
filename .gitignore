@@ -1,0 +1,5 @@
+.env
+/.idea
+info.txt
+/node_modules
+package-lock.json
