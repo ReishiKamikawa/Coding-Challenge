@@ -521,7 +521,6 @@ const TrelloInterface = () => {
                   </>
                 ) : (
                   <>
-                    <div className="empty-list">No cards in this board</div>
                     <div className="add-list-card">
                       <button className="add-list-button">
                         <span className="plus-icon">+</span>

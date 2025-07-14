@@ -2,6 +2,7 @@
 import LoginPage from './pages/LoginPage'
 import VerifyPage from './pages/VerifyPage'
 import TrelloInterface from './pages/TrelloInterface'
+import TrelloWorkspace from './pages/TrelloWorkspace'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('login');
@@ -22,6 +23,8 @@ function App() {
       }
     } else if (path === '/verify') {
       setCurrentPage('verify');
+    } else if (path === '/workspace') {
+      setCurrentPage('workspace');
     } else {
 
       setCurrentPage('login');
@@ -39,6 +42,8 @@ function App() {
         setCurrentPage('trello');
       } else if (newPath === '/verify') {
         setCurrentPage('verify');
+      } else if (newPath === '/workspace') {
+        setCurrentPage('workspace');
       } else {
         setCurrentPage('login');
       }
@@ -63,6 +68,7 @@ function App() {
       {currentPage === 'login' && <LoginPage onContinue={navigateToVerify} />}
       {currentPage === 'verify' && <VerifyPage email={userEmail} />}
       {currentPage === 'trello' && <TrelloInterface />}
+      {currentPage === 'workspace' && <TrelloWorkspace />}
     </>
   )
 }

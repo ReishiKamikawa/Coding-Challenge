@@ -8,7 +8,6 @@ function VerifyPage({ email }) {
   const [countdown, setCountdown] = useState(60);
   const [canResend, setCanResend] = useState(false);
 
-  // Countdown timer for resending code
   useEffect(() => {
     if (countdown > 0 && !canResend) {
       const timer = setTimeout(() => {
@@ -30,7 +29,6 @@ function VerifyPage({ email }) {
     setLoading(true);
 
     try {
-      // Call the login-with-code API endpoint
       const response = await fetch('http://localhost:3000/auth/login-with-code', {
         method: 'POST',
         headers: {
@@ -50,13 +48,11 @@ function VerifyPage({ email }) {
 
       console.log('Login successful:', data);
 
-      // Store token in localStorage for authentication
       if (data.token) {
         localStorage.setItem('auth_token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
 
-        // Redirect to the TrelloInterface page instead of showing success message
-        window.location.href = '/trello';
+        window.location.href = '/workspace';
       } else {
         throw new Error('No authentication token received');
       }
@@ -74,7 +70,6 @@ function VerifyPage({ email }) {
     setError('');
 
     try {
-      // Call the backend API to resend verification code
       const response = await fetch('http://localhost:3000/auth/send-code', {
         method: 'POST',
         headers: {
@@ -89,7 +84,6 @@ function VerifyPage({ email }) {
         throw new Error(data.message || 'Failed to resend verification code');
       }
 
-      // Reset countdown
       setCountdown(60);
       setCanResend(false);
 
@@ -109,16 +103,13 @@ function VerifyPage({ email }) {
 
   return (
     <div className="login-container">
-      {/* Main verification card */}
       <div className="login-card-wrapper">
         <div className="login-card">
           <div className="login-content">
-            {/* Logo */}
             <div className="logo">
               <span className="logo-text">S</span>
             </div>
 
-            {/* Title */}
             <div className="text-center">
               <h2 className="text-xl font-semibold text-gray-800">Email Verification</h2>
               <p className="text-sm text-gray-600 mt-1">
@@ -126,7 +117,6 @@ function VerifyPage({ email }) {
               </p>
             </div>
 
-            {/* Form */}
             <div className="form-container">
               {error && (
                 <div className="error-message">
@@ -158,7 +148,6 @@ function VerifyPage({ email }) {
                 Submit
               </button>
 
-              {/* Resend code option */}
               <div className="resend-container">
                 {canResend ? (
                   <button
@@ -176,7 +165,6 @@ function VerifyPage({ email }) {
               </div>
             </div>
 
-            {/* Footer links */}
             <div className="footer-links">
               <a
                 href="#"
